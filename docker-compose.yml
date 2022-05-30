@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  back:
+    build: ./back
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+      - DATA_SOURCE=./data/data.json
+    volumes:
+      - ./data:/usr/src/app/data
+  front:
+    build: ./front
+    ports:
+      - "4300:4300"
+
